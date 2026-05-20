@@ -173,8 +173,8 @@ module.exports = [
     },
   },
   {
-    name: 'quote',
-    aliases: ['quoteen', 'randomquote'],
+    name: 'quoteen',
+    aliases: ['randomquote', 'quoteenglish'],
     category: 'search',
     description: 'Dapatkan quote random dari internet',
     handler: async (ctx) => {

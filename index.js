@@ -21,17 +21,17 @@ const store = makeInMemoryStore({ logger });
 
 const startTime = Date.now();
 
+// Load plugins once at startup
+console.log(chalk.cyan('╔════════════════════════════════╗'));
+console.log(chalk.cyan('║') + chalk.yellow('     BOT-WA MULTI FEATURE      ') + chalk.cyan('║'));
+console.log(chalk.cyan('║') + chalk.white('     Powered by Baileys         ') + chalk.cyan('║'));
+console.log(chalk.cyan('╚════════════════════════════════╝'));
+console.log();
+
+loadPlugins();
+console.log();
+
 async function startBot() {
-  console.log(chalk.cyan('╔════════════════════════════════╗'));
-  console.log(chalk.cyan('║') + chalk.yellow('     BOT-WA MULTI FEATURE      ') + chalk.cyan('║'));
-  console.log(chalk.cyan('║') + chalk.white('     Powered by Baileys         ') + chalk.cyan('║'));
-  console.log(chalk.cyan('╚════════════════════════════════╝'));
-  console.log();
-
-  // Load plugins
-  loadPlugins();
-  console.log();
-
   const { state, saveCreds } = await useMultiFileAuthState(
     config.sessionName
   );
@@ -250,25 +250,25 @@ async function startBot() {
       }
     }
   });
-
-  // Scheduled tasks
-  // Clean temp files every 6 hours
-  cron.schedule('0 */6 * * *', () => {
-    cleanTemp();
-    console.log(chalk.blue('[CRON] Temp files cleaned'));
-  });
-
-  // Log uptime every hour
-  cron.schedule('0 * * * *', () => {
-    const uptime = formatDuration(Date.now() - startTime);
-    console.log(chalk.blue(`[CRON] Uptime: ${uptime}`));
-  });
 }
 
 // Start the bot
 startBot().catch((err) => {
   console.log(chalk.red(`[FATAL] ${err.message}`));
   process.exit(1);
+});
+
+// Scheduled tasks (registered once at module level)
+// Clean temp files every 6 hours
+cron.schedule('0 */6 * * *', () => {
+  cleanTemp();
+  console.log(chalk.blue('[CRON] Temp files cleaned'));
+});
+
+// Log uptime every hour
+cron.schedule('0 * * * *', () => {
+  const uptime = formatDuration(Date.now() - startTime);
+  console.log(chalk.blue(`[CRON] Uptime: ${uptime}`));
 });
 
 // Handle uncaught exceptions
