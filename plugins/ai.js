@@ -1,4 +1,5 @@
 const config = require('../config');
+const { fetchJson } = require('../lib/utils');
 
 module.exports = [
   {
@@ -13,16 +14,12 @@ module.exports = [
           `Gunakan: ${config.prefix}ai <pertanyaan>\n\nContoh: ${config.prefix}ai Apa itu JavaScript?`
         );
       }
-
       try {
-        const axios = require('axios');
-        const res = await axios.post(
-          'https://api.simsimi.vn/v1/simtalk',
-          new URLSearchParams({ text: ctx.text, lc: 'id' }),
-          { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+        const data = await fetchJson(
+          `https://api.siputzx.my.id/api/ai/llama33-70b?content=${encodeURIComponent(ctx.text)}`
         );
-        if (res.data && res.data.message) {
-          await ctx.reply(`🤖 *AI Response*\n\n${res.data.message}`);
+        if (data && data.data) {
+          await ctx.reply(`🤖 *AI Response*\n\n${data.data}`);
         } else {
           await ctx.reply('🤖 Hmm, aku tidak mengerti. Coba tanya yang lain!');
         }
@@ -39,9 +36,7 @@ module.exports = [
     usage: 'simi <pesan>',
     handler: async (ctx) => {
       if (!ctx.text) {
-        return ctx.reply(
-          `Gunakan: ${config.prefix}simi <pesan>\n\nContoh: ${config.prefix}simi Halo`
-        );
+        return ctx.reply(`Gunakan: ${config.prefix}simi <pesan>`);
       }
       try {
         const axios = require('axios');
@@ -57,6 +52,76 @@ module.exports = [
         }
       } catch {
         await ctx.reply('❌ SimSimi sedang tidak tersedia!');
+      }
+    },
+  },
+  {
+    name: 'gemini',
+    aliases: ['bard'],
+    category: 'ai',
+    description: 'Chat dengan Gemini AI',
+    usage: 'gemini <pertanyaan>',
+    handler: async (ctx) => {
+      if (!ctx.text) {
+        return ctx.reply(`Gunakan: ${config.prefix}gemini <pertanyaan>`);
+      }
+      try {
+        const data = await fetchJson(
+          `https://api.siputzx.my.id/api/ai/gemini-pro?content=${encodeURIComponent(ctx.text)}`
+        );
+        if (data && data.data) {
+          await ctx.reply(`🤖 *Gemini AI*\n\n${data.data}`);
+        } else {
+          await ctx.reply('❌ Gagal mendapat respon!');
+        }
+      } catch {
+        await ctx.reply('❌ Gemini AI sedang tidak tersedia!');
+      }
+    },
+  },
+  {
+    name: 'mistral',
+    category: 'ai',
+    description: 'Chat dengan Mistral AI',
+    usage: 'mistral <pertanyaan>',
+    handler: async (ctx) => {
+      if (!ctx.text) {
+        return ctx.reply(`Gunakan: ${config.prefix}mistral <pertanyaan>`);
+      }
+      try {
+        const data = await fetchJson(
+          `https://api.siputzx.my.id/api/ai/mistral?content=${encodeURIComponent(ctx.text)}`
+        );
+        if (data && data.data) {
+          await ctx.reply(`🤖 *Mistral AI*\n\n${data.data}`);
+        } else {
+          await ctx.reply('❌ Gagal mendapat respon!');
+        }
+      } catch {
+        await ctx.reply('❌ Mistral AI sedang tidak tersedia!');
+      }
+    },
+  },
+  {
+    name: 'deepseek',
+    category: 'ai',
+    description: 'Chat dengan DeepSeek AI',
+    usage: 'deepseek <pertanyaan>',
+    handler: async (ctx) => {
+      if (!ctx.text) {
+        return ctx.reply(`Gunakan: ${config.prefix}deepseek <pertanyaan>`);
+      }
+      try {
+        const data = await fetchJson(
+          `https://api.siputzx.my.id/api/ai/deepseek-r1?content=${encodeURIComponent(ctx.text)}`
+        );
+        if (data && data.data) {
+          await ctx.reply(`🤖 *DeepSeek AI*\n\n${data.data}`);
+        } else {
+          await ctx.reply('❌ Gagal mendapat respon!');
+        }
+      } catch {
+        await ctx.reply('❌ DeepSeek AI sedang tidak tersedia!');
       }
     },
   },
@@ -82,6 +147,11 @@ module.exports = [
         'Lumba-lumba tidur dengan satu mata terbuka.',
         'Lebah madu bisa mengenali wajah manusia.',
         'Air panas membeku lebih cepat dari air dingin (Efek Mpemba).',
+        'Setiap hari, jantungmu memompa sekitar 7.571 liter darah.',
+        'Kecoak bisa hidup tanpa kepala selama seminggu.',
+        'Harimau memiliki kulit yang bergaris, bukan hanya bulunya.',
+        'Gajah adalah satu-satunya hewan yang tidak bisa melompat.',
+        'Manusia berbagi 60% DNA dengan pisang.',
       ];
       const randomFact = fakta[Math.floor(Math.random() * fakta.length)];
       await ctx.reply(`🧠 *Fakta Menarik*\n\n${randomFact}`);
@@ -102,8 +172,7 @@ module.exports = [
         'Ke Bandung naik kereta api,\nSinggah dulu di Cimahi,\nMari kita jaga sesama ini,\nAgar dunia penuh harmoni.',
         'Bunga mawar merah merona,\nTumbuh indah di taman sari,\nJanganlah bersedih dan resah gulana,\nEsok pasti lebih baik dari hari ini.',
       ];
-      const randomPantun =
-        pantunList[Math.floor(Math.random() * pantunList.length)];
+      const randomPantun = pantunList[Math.floor(Math.random() * pantunList.length)];
       await ctx.reply(`📝 *Pantun*\n\n${randomPantun}`);
     },
   },

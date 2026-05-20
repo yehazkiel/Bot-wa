@@ -1,102 +1,61 @@
 # Bot-WA
 
-WhatsApp Bot multi-fitur menggunakan [@whiskeysockets/baileys](https://github.com/WhiskeySockets/Baileys).
+WhatsApp Bot multi-fitur (228+ perintah) menggunakan [@whiskeysockets/baileys](https://github.com/WhiskeySockets/Baileys).
 
-## Fitur
+**Semua fitur GRATIS tanpa API key!**
 
-### Info
-- `!menu` - Menampilkan daftar perintah
-- `!ping` - Cek kecepatan respon bot
-- `!runtime` - Waktu aktif bot
-- `!owner` - Info owner bot
-- `!script` - Source code bot
+## Fitur (228+ Perintah)
 
-### Group Management
-- `!kick` - Keluarkan member
-- `!add` - Tambahkan member
-- `!promote` / `!demote` - Atur admin
-- `!tagall` / `!hidetag` - Tag semua member
-- `!groupinfo` - Informasi grup
-- `!setname` / `!setdesc` - Ubah nama/deskripsi grup
-- `!linkgroup` / `!revoke` - Link grup
-- `!mute` / `!unmute` - Mute/unmute bot di grup
-- `!antilink on/off` - Anti-link
-- `!welcome on/off` - Welcome/goodbye message
-- `!listadmin` - Daftar admin
+### Info (6)
+`!menu` `!info` `!ping` `!runtime` `!owner` `!script`
 
-### Downloader
-- `!ytmp3` - Download audio YouTube
-- `!ytmp4` - Download video YouTube
-- `!tiktok` - Download video TikTok
-- `!instagram` - Download post/reel Instagram
-- `!twitter` - Download video Twitter/X
-- `!facebook` - Download video Facebook
-- `!mediafire` - Download file MediaFire
+### AI (8)
+`!ai` `!gemini` `!mistral` `!deepseek` `!simi` `!fakta` `!pantun` `!ceritahorror`
 
-### Sticker & Converter
-- `!sticker` - Buat sticker dari gambar/video
-- `!toimg` - Ubah sticker ke gambar
-- `!circle` - Sticker bulat
-- `!resize` - Resize gambar
+### Anime (26)
+`!waifu` `!neko` `!shinobu` `!megumin` `!cuddle` `!animehug` `!pat` `!animeslap` `!wink` `!poke` `!smile` `!wave` `!bite` `!animekill` `!animekick` `!cringe` `!cry` `!dance` `!blush` `!bully` `!bonk` `!yeet` `!handhold` `!nom` `!happy` `!animequote`
 
-### Tools
-- `!calc` - Kalkulator matematika
-- `!translate` - Terjemahkan teks (gratis)
-- `!cuaca` - Cek cuaca (gratis, tanpa API key)
-- `!qr` - Buat QR code
-- `!shorturl` - Perpendek URL
-- `!waktu` - Jam dunia
-- `!reminder` - Set pengingat
-- `!base64encode` / `!base64decode` - Encode/decode Base64
-- `!randomcolor` - Generate warna random
-- `!count` - Hitung karakter & kata
-- `!password` - Generate password random
+### Economy (20)
+`!daily` `!weekly` `!balance` `!transfer` `!deposit` `!withdraw` `!work` `!hunt` `!fish` `!mine` `!rob` `!crime` `!shop` `!buy` `!sell` `!inventory` `!richest` `!bet` `!lottery` `!gift`
 
-### Search
-- `!wikipedia` / `!wikien` - Cari di Wikipedia (ID/EN)
-- `!github` - Cari profil GitHub
-- `!npm` - Cari package NPM
-- `!ip` - IP lookup
-- `!quote` - Quote random dari internet
-- `!meme` - Meme random
+### Education (15)
+`!peribahasa` `!unsur` `!planet` `!negara` `!bahasa` `!binary` `!frombinary` `!hex` `!fromhex` `!roman` `!suhu` `!berat` `!panjang` `!rumusmatika` `!katamutiara`
 
-### AI
-- `!ai` - Chat dengan AI (gratis, tanpa API key)
-- `!simi` - Chat dengan SimSimi
-- `!fakta` - Fakta menarik random
-- `!pantun` - Pantun random
-- `!ceritahorror` - Cerita horror pendek
+### Downloader (7)
+`!ytmp3` `!ytmp4` `!tiktok` `!instagram` `!twitter` `!facebook` `!mediafire`
 
-### Fun
-- `!quote` - Quote motivasi
-- `!truth` / `!dare` - Truth or Dare
-- `!flip` / `!dice` - Lempar koin/dadu
-- `!rng` - Random number
-- `!rate` - Rate sesuatu
-- `!ship` - Love calculator
-- `!siapakah` - Pilih random member
-- `!choose` - Pilih opsi
-- `!zodiac` - Cek zodiak
-- `!tebakangka` - Tebak angka
-- `!aesthetic` - Teks aesthetic
-- `!reverse` - Balikkan teks
+### Fun (23)
+`!pickup` `!pantunlucu` `!jokes` `!darkjoke` `!puisi` `!cerpen` `!bucin` `!galau` `!8ball` `!hack` `!afk` `!horoscope` `!couplepp` `!truth` `!dare` `!ship` `!siapakah` `!choose` `!rate` `!flip` `!dice` `!rng` `!reverse`
 
-### User System
-- `!register` - Daftar ke bot
-- `!profile` - Lihat profil
-- `!level` - Cek level
-- `!leaderboard` - Peringkat user
+### Game (15)
+`!tebakkata` `!suit` `!slot` `!mathquiz` `!riddle` `!trivia` `!scramble` `!quizcapital` `!emojiquiz` `!quiziq` `!tebakangka` `!tebakbendera` `!tebakkota` `!tebaklirik` `!wouldyourather`
 
-### Owner
-- `!broadcast` - Broadcast pesan
-- `!ban` / `!unban` - Ban/unban user
-- `!banlist` - Daftar ban
-- `!setprefix` - Ubah prefix
-- `!setbotname` - Ubah nama bot
-- `!join` / `!leave` - Join/leave grup
-- `!eval` - Evaluate JS code
-- `!cleartmp` - Bersihkan file temporary
-- `!setpremium` / `!delpremium` - Atur premium user
+### Group (16)
+`!kick` `!add` `!promote` `!demote` `!tagall` `!hidetag` `!groupinfo` `!setname` `!setdesc` `!linkgroup` `!revoke` `!mute` `!unmute` `!antilink` `!welcome` `!listadmin`
+
+### Islamic (14)
+`!alquran` `!tafsir` `!quransurah` `!jadwalsholat` `!asmaulhusna` `!doaharian` `!kisahnabi` `!ayatkursi` `!islamicquote` `!istighfar` `!dzikir` `!niatsolat` `!hijriah` `!hadist`
+
+### Owner (10)
+`!broadcast` `!ban` `!unban` `!banlist` `!setprefix` `!setbotname` `!join` `!leave` `!eval` `!cleartmp`
+
+### Search (7)
+`!wikipedia` `!wikien` `!github` `!npm` `!ipinfo` `!quoteen` `!meme`
+
+### Sticker (4)
+`!sticker` `!toimg` `!circle` `!resize`
+
+### Text Style (17)
+`!bold` `!italic` `!monospace` `!bubble` `!square` `!smallcaps` `!cursive` `!medieval` `!doublestruck` `!sans` `!sansbold` `!strikethrough` `!upsidedown` `!vaporwave` `!mirror` `!emojitext` `!readmore`
+
+### Tools (12)
+`!calc` `!translate` `!cuaca` `!qr` `!shorturl` `!waktu` `!reminder` `!base64encode` `!base64decode` `!randomcolor` `!count` `!password`
+
+### Extra Tools (22)
+`!uuid` `!timestamp` `!epochconvert` `!jsonformat` `!urlencode` `!urldecode` `!htmlencode` `!htmldecode` `!md5` `!sha256` `!sha1` `!fakedata` `!lorem` `!hashtag` `!ssweb` `!whois` `!dns` `!statuscode` `!useragent` `!urlcheck` `!tempmail` `!ipinfo`
+
+### User System (6)
+`!register` `!profile` `!level` `!leaderboard` `!setpremium` `!delpremium`
 
 ## Instalasi
 
@@ -150,7 +109,7 @@ Bot-wa/
 ├── .eslintrc.json        # ESLint config
 ├── lib/
 │   ├── handler.js        # Command handler & plugin loader
-│   ├── database.js       # JSON database manager
+│   ├── database.js       # JSON database manager (in-memory cache)
 │   └── utils.js          # Utility functions
 ├── plugins/
 │   ├── menu.js           # Menu & info commands
@@ -158,10 +117,17 @@ Bot-wa/
 │   ├── group.js          # Group management
 │   ├── sticker.js        # Sticker & converter
 │   ├── tools.js          # Various tools
-│   ├── fun.js            # Fun commands
+│   ├── extratools.js     # Extra tools (hash, encode, etc.)
+│   ├── extrafun.js       # Fun commands (truth/dare, jokes, etc.)
 │   ├── search.js         # Search commands
 │   ├── downloader.js     # Media downloader
-│   ├── ai.js             # AI integration
+│   ├── ai.js             # AI integration (siputzx)
+│   ├── anime.js          # Anime images & reactions
+│   ├── game.js           # Games & quizzes
+│   ├── economy.js        # Economy system
+│   ├── education.js      # Education & conversion
+│   ├── islamic.js        # Islamic features
+│   ├── textstyle.js      # Text styling
 │   └── user.js           # User system
 └── database/             # JSON database storage
 ```
